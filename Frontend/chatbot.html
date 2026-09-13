@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Coach | FitAI</title>
+
+    <link
+        rel="stylesheet"
+        href="chatbot.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                F
+            </div>
+
+            <span>
+                FitAI
+            </span>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="workout.html">
+                <span>🏋️</span>
+                <span>Workout</span>
+            </a>
+
+            <a href="diet.html">
+                <span>🥗</span>
+                <span>Diet</span>
+            </a>
+
+            <a href="water.html">
+                <span>💧</span>
+                <span>Water</span>
+            </a>
+
+            <a href="motivation.html">
+                <span>🔥</span>
+                <span>Motivation</span>
+            </a>
+
+            <a href="progress.html">
+                <span>📊</span>
+                <span>Progress</span>
+            </a>
+
+            <a href="profile.html">
+                <span>👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a
+                href="chatbot.html"
+                class="active"
+            >
+                <span>🤖</span>
+                <span>AI Coach</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+            >
+                ☰
+            </button>
+
+
+            <div class="header-spacer"></div>
+
+
+            <div class="header-actions">
+
+                <div
+                    class="auth-buttons"
+                    id="authButtons"
+                >
+
+                    <a
+                        href="login.html"
+                        class="login-btn"
+                    >
+                        Login
+                    </a>
+
+                    <a
+                        href="register.html"
+                        class="register-btn"
+                    >
+                        Register
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="profile-area"
+                    id="profileArea"
+                >
+
+                    <button
+                        class="profile-btn"
+                        id="profileBtn"
+                    >
+
+                        <div
+                            class="profile-avatar"
+                            id="profileAvatar"
+                        >
+                            A
+                        </div>
+
+                        <span id="headerProfileName">
+                            User
+                        </span>
+
+                        <span>
+                            ▾
+                        </span>
+
+                    </button>
+
+
+                    <div
+                        class="profile-dropdown"
+                        id="profileDropdown"
+                    >
+
+                        <a href="profile.html">
+                            👤 Profile
+                        </a>
+
+                        <button id="logoutBtn">
+                            🚪 Logout
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                >
+                    🌙
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE -->
+
+        <section class="page-container">
+
+
+            <div class="page-heading">
+
+                <h1>
+                    AI Fitness Coach 🤖
+                </h1>
+
+                <p>
+                    Ask FitAI anything about your workouts,
+                    diet, hydration and fitness progress.
+                </p>
+
+            </div>
+
+
+            <!-- CHAT -->
+
+            <div class="chat-card">
+
+
+                <!-- CHAT HEADER -->
+
+                <div class="chat-header">
+
+                    <div class="coach-avatar">
+                        🤖
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            FitAI Coach
+                        </h2>
+
+                        <span class="online-status">
+                            ● AI Coach
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGES -->
+
+                <div
+                    class="chat-messages"
+                    id="chatMessages"
+                >
+
+                    <div class="message assistant">
+
+                        <div class="message-avatar">
+                            🤖
+                        </div>
+
+                        <div class="message-content">
+
+                            <p>
+                                Hey! 👋 I'm your FitAI Coach.
+                            </p>
+
+                            <p>
+                                I can help you with workouts,
+                                nutrition, hydration and your
+                                fitness progress.
+                            </p>
+
+                            <p>
+                                What would you like to know?
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUGGESTIONS -->
+
+                <div class="suggestions">
+
+                    <button
+                        class="suggestion-btn"
+                        data-message="What workout should I do today?"
+                    >
+                        🏋️ Workout suggestion
+                    </button>
+
+                    <button
+                        class="suggestion-btn"
+                        data-message="How much water should I drink today?"
+                    >
+                        💧 Hydration
+                    </button>
+
+                    <button
+                        class="suggestion-btn"
+                        data-message="Give me a healthy diet plan."
+                    >
+                        🥗 Diet plan
+                    </button>
+
+                    <button
+                        class="suggestion-btn"
+                        data-message="How is my fitness progress?"
+                    >
+                        📊 My progress
+                    </button>
+
+                </div>
+
+
+                <!-- INPUT -->
+
+                <div class="chat-input-area">
+
+                    <textarea
+                        id="messageInput"
+                        placeholder="Ask your FitAI Coach..."
+                        rows="1"
+                    ></textarea>
+
+
+                    <button
+                        id="sendBtn"
+                        class="send-btn"
+                    >
+                        ➤
+                    </button>
+
+                </div>
+
+
+                <div class="chat-disclaimer">
+
+                    FitAI Coach provides general fitness
+                    information and is not a substitute
+                    for professional medical advice.
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <script src="chatbot.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Motivation | FitAI</title>
+
+    <link rel="stylesheet" href="motivation.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">F</div>
+
+            <div class="logo-text">
+                <h2>FitAI</h2>
+                <span>Fitness Assistant</span>
+            </div>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="workout.html" class="nav-item">
+                <span class="nav-icon">🏋️</span>
+                <span>Workout</span>
+            </a>
+
+            <a href="diet.html" class="nav-item">
+                <span class="nav-icon">🍎</span>
+                <span>Diet</span>
+            </a>
+
+            <a href="water.html" class="nav-item">
+                <span class="nav-icon">💧</span>
+                <span>Water</span>
+            </a>
+
+            <a href="motivation.html" class="nav-item active">
+                <span class="nav-icon">💪</span>
+                <span>Motivation</span>
+            </a>
+
+            <a href="progress.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span>Progress</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="chatbot.html" class="nav-item">
+                <span class="nav-icon">🤖</span>
+                <span>AI Coach</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="theme-toggle"
+                id="themeToggle"
+            >
+                <span id="themeIcon">🌙</span>
+                <span id="themeText">Dark Mode</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MOBILE HEADER ================= -->
+
+    <header class="mobile-header">
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+
+        <div class="mobile-logo">
+
+            <div class="logo-icon">F</div>
+
+            <span>FitAI</span>
+
+        </div>
+
+
+        <div
+            class="mobile-user-area"
+            id="mobileUserArea"
+        >
+            <a href="login.html">Login</a>
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <div class="top-bar">
+
+            <div class="page-heading">
+
+                <p class="page-label">
+                    FITAI WELLNESS
+                </p>
+
+                <h1>
+                    Motivation
+                </h1>
+
+                <p class="page-description">
+                    Stay focused, build discipline and keep moving forward.
+                </p>
+
+            </div>
+
+
+            <!-- AUTH AREA -->
+
+            <div class="user-area" id="userArea">
+
+                <div
+                    class="auth-buttons"
+                    id="authButtons"
+                >
+
+                    <a
+                        href="login.html"
+                        class="login-btn"
+                    >
+                        Login
+                    </a>
+
+                    <a
+                        href="register.html"
+                        class="register-btn"
+                    >
+                        Register
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="logged-user"
+                    id="loggedUser"
+                    style="display: none;"
+                >
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        U
+                    </div>
+
+
+                    <div class="user-details">
+
+                        <strong id="userName">
+                            User
+                        </strong>
+
+                        <span>
+                            FitAI Member
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="logout-btn"
+                        id="logoutBtn"
+                    >
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= MOTIVATION HERO ================= -->
+
+        <section class="motivation-hero">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    ✨ DAILY MOTIVATION
+                </span>
+
+
+                <h2 id="quoteText">
+                    The secret of getting ahead is getting started.
+                </h2>
+
+
+                <p id="quoteAuthor">
+                    — Mark Twain
+                </p>
+
+
+                <button
+                    type="button"
+                    id="newMotivationBtn"
+                    class="motivation-btn"
+                >
+                    ✨ New Motivation
+                </button>
+
+            </div>
+
+
+            <div
+                class="hero-decoration"
+                aria-hidden="true"
+            >
+                💪
+            </div>
+
+        </section>
+
+
+        <!-- ================= MINDSET ================= -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Build Your Mindset
+                    </h2>
+
+                    <p>
+                        Small changes every day create big results.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="mindset-grid">
+
+                <!-- FOCUS -->
+
+                <article class="mindset-card">
+
+                    <div class="mindset-icon focus-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Stay Focused
+                    </h3>
+
+                    <p>
+                        Keep your attention on your goals.
+                        Progress happens when you consistently
+                        work toward what matters.
+                    </p>
+
+                    <span class="mindset-tip">
+                        💡 Tip: Remove distractions during your workout.
+                    </span>
+
+                </article>
+
+
+                <!-- DISCIPLINE -->
+
+                <article class="mindset-card">
+
+                    <div class="mindset-icon discipline-icon">
+                        🔥
+                    </div>
+
+                    <h3>
+                        Build Discipline
+                    </h3>
+
+                    <p>
+                        Motivation comes and goes. Discipline
+                        keeps you moving even when you don't
+                        feel like it.
+                    </p>
+
+                    <span class="mindset-tip">
+                        💡 Tip: Follow your routine even on difficult days.
+                    </span>
+
+                </article>
+
+
+                <!-- IMPROVEMENT -->
+
+                <article class="mindset-card">
+
+                    <div class="mindset-icon improve-icon">
+                        📈
+                    </div>
+
+                    <h3>
+                        Keep Improving
+                    </h3>
+
+                    <p>
+                        You don't need to be perfect. Aim to
+                        become slightly better than you were
+                        yesterday.
+                    </p>
+
+                    <span class="mindset-tip">
+                        💡 Tip: Track your progress every week.
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DAILY CHALLENGE ================= -->
+
+        <section class="challenge-section">
+
+            <div class="challenge-card">
+
+                <div class="challenge-left">
+
+                    <div class="challenge-icon">
+                        🏆
+                    </div>
+
+
+                    <div class="challenge-content">
+
+                        <span class="challenge-label">
+                            TODAY'S CHALLENGE
+                        </span>
+
+                        <h2 id="challengeTitle">
+                            Complete a 20-minute workout
+                        </h2>
+
+                        <p id="challengeDescription">
+                            Move your body today and take one step
+                            closer to your fitness goal.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="completeChallengeBtn"
+                    class="challenge-btn"
+                >
+                    Mark Complete
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK REMINDERS ================= -->
+
+        <section class="section reminders-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Quick Reminders
+                    </h2>
+
+                    <p>
+                        Keep these simple rules in mind.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="reminders-grid">
+
+                <article class="reminder-card">
+
+                    <span>
+                        💧
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Stay Hydrated
+                        </h3>
+
+                        <p>
+                            Drink enough water throughout the day.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="reminder-card">
+
+                    <span>
+                        🥗
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Eat Better
+                        </h3>
+
+                        <p>
+                            Choose nutritious foods that support
+                            your goals.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="reminder-card">
+
+                    <span>
+                        😴
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Recover
+                        </h3>
+
+                        <p>
+                            Good sleep and recovery are part
+                            of progress.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="reminder-card">
+
+                    <span>
+                        🏋️
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Stay Consistent
+                        </h3>
+
+                        <p>
+                            Consistency beats occasional
+                            extreme effort.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FINAL MESSAGE ================= -->
+
+        <section class="bottom-message">
+
+            <div class="bottom-message-icon">
+                🚀
+            </div>
+
+
+            <div>
+
+                <h2>
+                    You've Got This!
+                </h2>
+
+                <p>
+                    Your fitness journey is built one workout,
+                    one meal and one good decision at a time.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="motivation.js"></script>
+
+</body>
+</html>

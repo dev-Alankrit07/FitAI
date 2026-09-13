@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Progress | FitAI</title>
+
+    <link rel="stylesheet" href="progress.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                F
+            </div>
+
+            <div class="logo-text">
+                <h2>FitAI</h2>
+                <span>Fitness Assistant</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="workout.html" class="nav-item">
+                <span class="nav-icon">🏋️</span>
+                <span>Workout</span>
+            </a>
+
+            <a href="diet.html" class="nav-item">
+                <span class="nav-icon">🍎</span>
+                <span>Diet</span>
+            </a>
+
+            <a href="water.html" class="nav-item">
+                <span class="nav-icon">💧</span>
+                <span>Water</span>
+            </a>
+
+            <a href="motivation.html" class="nav-item">
+                <span class="nav-icon">💪</span>
+                <span>Motivation</span>
+            </a>
+
+            <a href="progress.html" class="nav-item active">
+                <span class="nav-icon">📊</span>
+                <span>Progress</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="chatbot.html" class="nav-item">
+                <span class="nav-icon">🤖</span>
+                <span>AI Coach</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="theme-toggle"
+                id="themeToggle"
+            >
+                <span id="themeIcon">🌙</span>
+                <span id="themeText">Dark Mode</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MOBILE HEADER ================= -->
+
+    <header class="mobile-header">
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+
+        <div class="mobile-logo">
+
+            <div class="logo-icon">
+                F
+            </div>
+
+            <span>FitAI</span>
+
+        </div>
+
+
+        <div
+            class="mobile-user-area"
+            id="mobileUserArea"
+        >
+            <a href="login.html">Login</a>
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <div class="top-bar">
+
+            <div class="page-heading">
+
+                <p class="page-label">
+                    FITAI ANALYTICS
+                </p>
+
+                <h1>
+                    Your Progress
+                </h1>
+
+                <p class="page-description">
+                    Track your consistency and see how far you've come.
+                </p>
+
+            </div>
+
+
+            <!-- AUTH AREA -->
+
+            <div class="user-area">
+
+                <div
+                    class="auth-buttons"
+                    id="authButtons"
+                >
+
+                    <a
+                        href="login.html"
+                        class="login-btn"
+                    >
+                        Login
+                    </a>
+
+                    <a
+                        href="register.html"
+                        class="register-btn"
+                    >
+                        Register
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="logged-user"
+                    id="loggedUser"
+                    style="display: none;"
+                >
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        U
+                    </div>
+
+
+                    <div class="user-details">
+
+                        <strong id="userName">
+                            User
+                        </strong>
+
+                        <span>
+                            FitAI Member
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="logout-btn"
+                        id="logoutBtn"
+                    >
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PROGRESS OVERVIEW ================= -->
+
+        <section class="overview-grid">
+
+            <!-- XP CARD -->
+
+            <div class="overview-card xp-card">
+
+                <div class="overview-card-top">
+
+                    <div class="overview-icon">
+                        ⭐
+                    </div>
+
+                    <span class="overview-label">
+                        TOTAL XP
+                    </span>
+
+                </div>
+
+
+                <div class="overview-value" id="totalXP">
+                    0
+                </div>
+
+                <div class="overview-subtext">
+                    Experience points earned
+                </div>
+
+            </div>
+
+
+            <!-- LEVEL CARD -->
+
+            <div class="overview-card">
+
+                <div class="overview-card-top">
+
+                    <div class="overview-icon">
+                        🏆
+                    </div>
+
+                    <span class="overview-label">
+                        CURRENT LEVEL
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="overview-value"
+                    id="currentLevel"
+                >
+                    1
+                </div>
+
+                <div
+                    class="overview-subtext"
+                    id="levelName"
+                >
+                    Beginner
+                </div>
+
+            </div>
+
+
+            <!-- WORKOUT CARD -->
+
+            <div class="overview-card">
+
+                <div class="overview-card-top">
+
+                    <div class="overview-icon">
+                        🏋️
+                    </div>
+
+                    <span class="overview-label">
+                        WORKOUTS
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="overview-value"
+                    id="totalWorkouts"
+                >
+                    0
+                </div>
+
+                <div class="overview-subtext">
+                    Workouts completed
+                </div>
+
+            </div>
+
+
+            <!-- STREAK CARD -->
+
+            <div class="overview-card">
+
+                <div class="overview-card-top">
+
+                    <div class="overview-icon">
+                        🔥
+                    </div>
+
+                    <span class="overview-label">
+                        STREAK
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="overview-value"
+                    id="currentStreak"
+                >
+                    0
+                </div>
+
+                <div class="overview-subtext">
+                    Days active
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LEVEL PROGRESS ================= -->
+
+        <section class="level-section">
+
+            <div class="level-card">
+
+                <div class="level-header">
+
+                    <div>
+
+                        <span class="small-label">
+                            YOUR FITNESS JOURNEY
+                        </span>
+
+                        <h2>
+                            Level
+                            <span id="levelNumber">
+                                1
+                            </span>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="level-badge">
+                        <span id="levelBadge">
+                            🌱
+                        </span>
+
+                        <span id="levelBadgeText">
+                            Beginner
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="xp-progress-area">
+
+                    <div class="xp-progress-info">
+
+                        <span id="xpCurrentText">
+                            0 XP
+                        </span>
+
+                        <span id="xpNextText">
+                            100 XP
+                        </span>
+
+                    </div>
+
+
+                    <div class="xp-progress">
+
+                        <div
+                            class="xp-progress-fill"
+                            id="xpProgressFill"
+                        ></div>
+
+                    </div>
+
+
+                    <p
+                        class="xp-progress-message"
+                        id="xpProgressMessage"
+                    >
+                        Earn XP by completing workouts,
+                        tracking meals and staying hydrated.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WEEKLY ACTIVITY ================= -->
+
+        <section class="content-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Weekly Activity
+                    </h2>
+
+                    <p>
+                        Your activity over the last 7 days.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-card">
+
+                <div
+                    class="weekly-chart"
+                    id="weeklyChart"
+                >
+                    <!-- Generated by JavaScript -->
+                </div>
+
+
+                <div class="chart-legend">
+
+                    <span>
+                        <i class="legend-dot workout-dot"></i>
+                        Workout
+                    </span>
+
+                    <span>
+                        <i class="legend-dot water-dot"></i>
+                        Water
+                    </span>
+
+                    <span>
+                        <i class="legend-dot diet-dot"></i>
+                        Diet
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATS GRID ================= -->
+
+        <section class="content-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Your Statistics
+                    </h2>
+
+                    <p>
+                        A quick look at your fitness activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🏋️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Workouts
+                        </span>
+
+                        <strong id="statWorkouts">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🍎
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Meals Logged
+                        </span>
+
+                        <strong id="statMeals">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        💧
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Water Days
+                        </span>
+
+                        <strong id="statWaterDays">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Achievements
+                        </span>
+
+                        <strong id="statAchievements">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACHIEVEMENTS ================= -->
+
+        <section class="content-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Achievements
+                    </h2>
+
+                    <p>
+                        Complete activities to unlock rewards.
+                    </p>
+
+                </div>
+
+
+                <span
+                    class="achievement-count"
+                    id="achievementCount"
+                >
+                    0 / 12
+                </span>
+
+            </div>
+
+
+            <div
+                class="achievements-grid"
+                id="achievementsGrid"
+            >
+                <!-- Generated by JavaScript -->
+            </div>
+
+        </section>
+
+
+        <!-- ================= WEEKLY SUMMARY ================= -->
+
+        <section class="content-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Weekly Summary
+                    </h2>
+
+                    <p>
+                        Your activity from the current week.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+
+                    <span class="summary-icon">
+                        🏋️
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Workouts
+                        </span>
+
+                        <strong id="weekWorkouts">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span class="summary-icon">
+                        🍎
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Meals
+                        </span>
+
+                        <strong id="weekMeals">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span class="summary-icon">
+                        💧
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Water Goal Days
+                        </span>
+
+                        <strong id="weekWater">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span class="summary-icon">
+                        ⭐
+                    </span>
+
+                    <div>
+
+                        <span>
+                            XP Earned
+                        </span>
+
+                        <strong id="weekXP">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MOTIVATION ================= -->
+
+        <section class="progress-message">
+
+            <div class="progress-message-icon">
+                🚀
+            </div>
+
+            <div>
+
+                <h2>
+                    Keep Going!
+                </h2>
+
+                <p id="progressMessage">
+                    Every small action you take today
+                    contributes to a stronger tomorrow.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="progress.js"></script>
+
+</body>
+</html>

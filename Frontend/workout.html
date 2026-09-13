@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout | FitAI</title>
+    <link rel="stylesheet" href="workout.css">
+</head>
+
+<body>
+
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">💪</div>
+
+            <div>
+                <h2>FitAI</h2>
+                <span>Fitness Companion</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="workout.html" class="active">
+                <span>🏋️</span>
+                <span>Workout</span>
+            </a>
+
+            <a href="diet.html">
+                <span>🍎</span>
+                <span>Diet</span>
+            </a>
+
+            <a href="water.html">
+                <span>💧</span>
+                <span>Water</span>
+            </a>
+
+            <a href="motivation.html">
+                <span>💪</span>
+                <span>Motivation</span>
+            </a>
+
+            <a href="progress.html">
+                <span>📊</span>
+                <span>Progress</span>
+            </a>
+
+            <a href="profile.html">
+                <span>👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="chatbot.html">
+                <span>🤖</span>
+                <span>AI Coach</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="themeToggle" class="theme-btn">
+                <span id="themeIcon">🌙</span>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <button id="mobileMenuBtn" class="mobile-menu-btn">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <h1>Workout</h1>
+                <p>Track your workouts and stay consistent.</p>
+            </div>
+
+            <div class="user-section" id="userSection"></div>
+
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="page-content">
+
+            <!-- Hero -->
+            <div class="workout-hero">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        FITAI WORKOUT TRACKER
+                    </span>
+
+                    <h2>
+                        Build strength.<br>
+                        Stay consistent.
+                    </h2>
+
+                    <p>
+                        Record your workouts, track your progress,
+                        and keep improving every day.
+                    </p>
+
+                </div>
+
+                <div class="hero-icon">
+                    🏋️
+                </div>
+
+            </div>
+
+
+            <!-- Workout Form -->
+            <div class="section-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Log Workout</h2>
+                        <p>Add your workout details below.</p>
+                    </div>
+
+                </div>
+
+
+                <form id="workoutForm">
+
+                    <div class="form-grid">
+
+                        <!-- Category -->
+                        <div class="form-group">
+
+                            <label for="category">
+                                Category
+                            </label>
+
+                            <select id="category" required>
+                                <option value="">
+                                    Select Category
+                                </option>
+
+                                <option value="Chest">
+                                    Chest
+                                </option>
+
+                                <option value="Back">
+                                    Back
+                                </option>
+
+                                <option value="Shoulders">
+                                    Shoulders
+                                </option>
+
+                                <option value="Arms">
+                                    Arms
+                                </option>
+
+                                <option value="Legs">
+                                    Legs
+                                </option>
+
+                                <option value="Core">
+                                    Core
+                                </option>
+
+                                <option value="Cardio">
+                                    Cardio
+                                </option>
+
+                                <option value="Full Body">
+                                    Full Body
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- Workout -->
+                        <div class="form-group">
+
+                            <label for="workout">
+                                Workout
+                            </label>
+
+                            <select id="workout" required disabled>
+                                <option value="">
+                                    Select Workout
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- Sets -->
+                        <div class="form-group">
+
+                            <label for="sets">
+                                Sets
+                            </label>
+
+                            <input
+                                type="number"
+                                id="sets"
+                                min="1"
+                                max="100"
+                                placeholder="e.g. 3"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Reps -->
+                        <div class="form-group">
+
+                            <label for="reps">
+                                Reps
+                            </label>
+
+                            <input
+                                type="number"
+                                id="reps"
+                                min="1"
+                                max="500"
+                                placeholder="e.g. 12"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Weight -->
+                        <div class="form-group">
+
+                            <label for="weight">
+                                Weight
+                                <span class="optional">(kg)</span>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="weight"
+                                min="0"
+                                step="0.5"
+                                placeholder="e.g. 20"
+                            >
+
+                        </div>
+
+
+                        <!-- Duration -->
+                        <div class="form-group">
+
+                            <label for="duration">
+                                Duration
+                                <span class="optional">(minutes)</span>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="duration"
+                                min="0"
+                                max="1440"
+                                placeholder="e.g. 30"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Notes -->
+                    <div class="form-group notes-group">
+
+                        <label for="notes">
+                            Notes
+                            <span class="optional">
+                                (optional)
+                            </span>
+                        </label>
+
+                        <textarea
+                            id="notes"
+                            rows="4"
+                            placeholder="How did the workout feel? Add any notes..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Buttons -->
+                    <div class="form-actions">
+
+                        <button
+                            type="reset"
+                            class="secondary-btn"
+                            id="clearFormBtn"
+                        >
+                            Clear
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                        >
+                            <span>＋</span>
+                            Save Workout
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Today's Summary -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🏋️
+                    </div>
+
+                    <div>
+                        <span class="stat-label">
+                            Today's Workouts
+                        </span>
+
+                        <strong id="todayWorkouts">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🔥
+                    </div>
+
+                    <div>
+                        <span class="stat-label">
+                            Total Workouts
+                        </span>
+
+                        <strong id="totalWorkouts">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⏱️
+                    </div>
+
+                    <div>
+                        <span class="stat-label">
+                            Today's Duration
+                        </span>
+
+                        <strong id="todayDuration">
+                            0 min
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Workout History -->
+            <div class="section-card history-card">
+
+                <div class="section-heading history-heading">
+
+                    <div>
+                        <h2>Workout History</h2>
+                        <p>Your recently recorded workouts.</p>
+                    </div>
+
+                    <span
+                        id="workoutCount"
+                        class="count-badge"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="workoutList"
+                    class="workout-list"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            🏋️
+                        </div>
+
+                        <h3>
+                            No workouts yet
+                        </h3>
+
+                        <p>
+                            Add your first workout above to start
+                            tracking your fitness journey.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+
+    <script src="workout.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitAI - Dashboard</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💪</span>
+                <span>FitAI</span>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="workout.html" class="nav-item">
+                <span class="nav-icon">🏋️</span>
+                <span>Workout</span>
+            </a>
+
+            <a href="diet.html" class="nav-item">
+                <span class="nav-icon">🍎</span>
+                <span>Diet</span>
+            </a>
+
+            <a href="water.html" class="nav-item">
+                <span class="nav-icon">💧</span>
+                <span>Water</span>
+            </a>
+
+            <a href="motivation.html" class="nav-item">
+                <span class="nav-icon">💪</span>
+                <span>Motivation</span>
+            </a>
+
+            <a href="progress.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span>Progress</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="chatbot.html" class="nav-item">
+                <span class="nav-icon">🤖</span>
+                <span>AI Coach</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-bottom">
+
+            <button class="theme-button" id="themeToggle">
+                <span id="themeIcon">🌙</span>
+                <span id="themeText">Dark Mode</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Mobile Overlay -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- Topbar -->
+
+        <header class="topbar">
+
+            <button class="menu-button" id="menuButton">
+                ☰
+            </button>
+
+            <div class="topbar-spacer"></div>
+
+            <div class="auth-area" id="authArea">
+
+                <a href="login.html" class="login-button">
+                    Login
+                </a>
+
+                <a href="register.html" class="register-button">
+                    Register
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             DASHBOARD CONTENT
+        ========================== -->
+
+        <section class="dashboard-content">
+
+            <!-- Welcome -->
+
+            <div class="welcome-section">
+
+                <div>
+                    <p class="welcome-small">Your fitness journey</p>
+
+                    <h1 id="welcomeTitle">
+                        Welcome to FitAI 💪
+                    </h1>
+
+                    <p id="welcomeText">
+                        Track your workouts, nutrition and progress all in one place.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 STAT CARDS
+            ========================== -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon workout-icon">
+                        🏋️
+                    </div>
+
+                    <div class="stat-info">
+                        <span>Workouts</span>
+                        <strong id="workoutCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon diet-icon">
+                        🍎
+                    </div>
+
+                    <div class="stat-info">
+                        <span>Meals Logged</span>
+                        <strong id="mealCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon water-icon">
+                        💧
+                    </div>
+
+                    <div class="stat-info">
+                        <span>Water Today</span>
+                        <strong id="waterCount">0 ml</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon progress-icon">
+                        📊
+                    </div>
+
+                    <div class="stat-info">
+                        <span>Today's Progress</span>
+                        <strong id="progressPercent">0%</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 MAIN GRID
+            ========================== -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- =========================
+                     BMI CARD
+                ========================== -->
+
+                <section class="dashboard-card bmi-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>BMI Calculator</h2>
+
+                            <p>
+                                Check your Body Mass Index
+                            </p>
+                        </div>
+
+                        <span class="card-header-icon">
+                            ⚖️
+                        </span>
+
+                    </div>
+
+
+                    <div class="bmi-form">
+
+                        <div class="form-group">
+
+                            <label for="bmiGender">
+                                Gender
+                            </label>
+
+                            <select id="bmiGender">
+
+                                <option value="">
+                                    Select Gender
+                                </option>
+
+                                <option value="male">
+                                    Male
+                                </option>
+
+                                <option value="female">
+                                    Female
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="bmiHeight">
+                                    Height (cm)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="bmiHeight"
+                                    placeholder="e.g. 175"
+                                    min="50"
+                                    max="250"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="bmiWeight">
+                                    Weight (kg)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="bmiWeight"
+                                    placeholder="e.g. 70"
+                                    min="20"
+                                    max="300"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="calculateBMI"
+                        >
+                            Calculate BMI
+                        </button>
+
+                    </div>
+
+
+                    <!-- BMI Result -->
+
+                    <div class="bmi-result" id="bmiResult">
+
+                        <div class="bmi-result-top">
+
+                            <div>
+                                <span class="result-label">
+                                    Your BMI
+                                </span>
+
+                                <strong id="bmiValue">
+                                    --
+                                </strong>
+                            </div>
+
+                            <span
+                                class="bmi-category"
+                                id="bmiCategory"
+                            >
+                                Enter your details
+                            </span>
+
+                        </div>
+
+
+                        <!-- BMI Gauge -->
+
+                        <div class="bmi-gauge">
+
+                            <svg
+                                viewBox="0 0 400 230"
+                                class="gauge-svg"
+                            >
+
+                                <!-- Background arc -->
+
+                                <path
+                                    class="gauge-background"
+                                    d="M 35 200 A 165 165 0 0 1 365 200"
+                                />
+
+
+                                <!-- Underweight -->
+
+                                <path
+                                    class="gauge-segment underweight"
+                                    d="M 35 200 A 165 165 0 0 1 91 83"
+                                />
+
+
+                                <!-- Normal -->
+
+                                <path
+                                    class="gauge-segment normal"
+                                    d="M 91 83 A 165 165 0 0 1 194 36"
+                                />
+
+
+                                <!-- Overweight -->
+
+                                <path
+                                    class="gauge-segment overweight"
+                                    d="M 194 36 A 165 165 0 0 1 295 67"
+                                />
+
+
+                                <!-- Obesity -->
+
+                                <path
+                                    class="gauge-segment obesity"
+                                    d="M 295 67 A 165 165 0 0 1 365 200"
+                                />
+
+
+                                <!-- Needle -->
+
+                                <g
+                                    id="bmiNeedle"
+                                    class="bmi-needle"
+                                >
+
+                                    <line
+                                        x1="200"
+                                        y1="200"
+                                        x2="200"
+                                        y2="70"
+                                    />
+
+                                    <circle
+                                        cx="200"
+                                        cy="200"
+                                        r="9"
+                                    />
+
+                                </g>
+
+                            </svg>
+
+
+                            <div class="gauge-labels">
+
+                                <span>15</span>
+                                <span>18.5</span>
+                                <span>25</span>
+                                <span>30</span>
+                                <span>40+</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="bmi-note">
+                            BMI is a general screening measurement and
+                            does not replace professional medical advice.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================
+                     TODAY'S FOCUS
+                ========================== -->
+
+                <section class="dashboard-card focus-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Today's Focus</h2>
+
+                            <p>
+                                Small steps every day
+                            </p>
+                        </div>
+
+                        <span class="card-header-icon">
+                            🎯
+                        </span>
+
+                    </div>
+
+
+                    <div class="focus-list">
+
+                        <a
+                            href="workout.html"
+                            class="focus-item"
+                        >
+
+                            <div class="focus-item-icon">
+                                🏋️
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Complete a workout
+                                </strong>
+
+                                <span>
+                                    Keep your body active today.
+                                </span>
+                            </div>
+
+                            <span class="focus-arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="diet.html"
+                            class="focus-item"
+                        >
+
+                            <div class="focus-item-icon">
+                                🍎
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Log your meals
+                                </strong>
+
+                                <span>
+                                    Keep track of what you eat.
+                                </span>
+                            </div>
+
+                            <span class="focus-arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="water.html"
+                            class="focus-item"
+                        >
+
+                            <div class="focus-item-icon">
+                                💧
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Stay hydrated
+                                </strong>
+
+                                <span>
+                                    Drink enough water throughout the day.
+                                </span>
+                            </div>
+
+                            <span class="focus-arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="motivation.html"
+                            class="focus-item"
+                        >
+
+                            <div class="focus-item-icon">
+                                💪
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Stay motivated
+                                </strong>
+
+                                <span>
+                                    Keep your consistency going.
+                                </span>
+                            </div>
+
+                            <span class="focus-arrow">
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- =========================
+                 BOTTOM CARDS
+            ========================== -->
+
+            <div class="bottom-grid">
+
+
+                <section class="quick-card">
+
+                    <div class="quick-icon">
+                        🏋️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Ready to train?
+                        </h3>
+
+                        <p>
+                            Log your workout and keep building consistency.
+                        </p>
+
+                        <a href="workout.html">
+                            Start Workout →
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <section class="quick-card">
+
+                    <div class="quick-icon">
+                        🥗
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            What's on your plate?
+                        </h3>
+
+                        <p>
+                            Record your meals and keep your nutrition organized.
+                        </p>
+
+                        <a href="diet.html">
+                            Log Meal →
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <section class="quick-card">
+
+                    <div class="quick-icon">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Need fitness advice?
+                        </h3>
+
+                        <p>
+                            Ask FitAI's AI Coach for help with your fitness journey.
+                        </p>
+
+                        <a href="chatbot.html">
+                            Ask AI Coach →
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         AI ASSISTANT
+         BOTTOM RIGHT
+    ========================== -->
+
+    <a
+        href="chatbot.html"
+        class="ai-assistant"
+        id="aiAssistant"
+        aria-label="Open FitAI AI Assistant"
+    >
+
+        <div class="ai-assistant-icon">
+            🤖
+        </div>
+
+        <div class="ai-assistant-text">
+
+            <strong>
+                AI Assistant
+            </strong>
+
+            <span>
+                Ask FitAI
+            </span>
+
+        </div>
+
+        <span class="ai-arrow">
+            →
+        </span>
+
+    </a>
+
+
+    <script src="index.js"></script>
+
+</body>
+</html>

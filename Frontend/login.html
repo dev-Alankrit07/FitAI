@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitAI - Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- ================= LEFT IMAGE SECTION ================= -->
+        <section class="login-visual">
+
+            <div class="visual-overlay"></div>
+
+            <div class="visual-content">
+
+                <div class="brand">
+                    <div class="brand-icon">💪</div>
+                    <span>FitAI</span>
+                </div>
+
+                <div class="visual-text">
+
+                    <span class="visual-label">
+                        YOUR FITNESS JOURNEY
+                    </span>
+
+                    <h1>
+                        Train Hard.<br>
+                        Live Strong.
+                    </h1>
+
+                    <p>
+                        Track your workouts, improve your habits,
+                        and become a stronger version of yourself
+                        every single day.
+                    </p>
+
+                </div>
+
+                <div class="visual-bottom">
+
+                    <div class="feature">
+                        <span>🏋️</span>
+                        <div>
+                            <strong>Smart Workouts</strong>
+                            <small>Track every session</small>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span>🍎</span>
+                        <div>
+                            <strong>Better Nutrition</strong>
+                            <small>Stay on top of your diet</small>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span>🤖</span>
+                        <div>
+                            <strong>AI Guidance</strong>
+                            <small>Your personal fitness coach</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RIGHT LOGIN SECTION ================= -->
+        <section class="login-section">
+
+            <!-- Theme -->
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle theme"
+            >
+                <span id="themeIcon">🌙</span>
+                <span id="themeText">Dark</span>
+            </button>
+
+
+            <div class="login-container">
+
+                <div class="mobile-logo">
+                    <div class="mobile-logo-icon">💪</div>
+                    <span>FitAI</span>
+                </div>
+
+
+                <div class="login-heading">
+
+                    <span class="heading-label">
+                        WELCOME BACK
+                    </span>
+
+                    <h2>
+                        Login to your account
+                    </h2>
+
+                    <p>
+                        Continue your fitness journey with FitAI.
+                    </p>
+
+                </div>
+
+
+                <!-- Login Form -->
+                <form id="loginForm" class="login-form">
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">✉️</span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <div class="password-label-row">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <a
+                                href="forgot-password.html"
+                                class="forgot-link"
+                            >
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">🔒</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Show password"
+                            >
+                                👁️
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Error -->
+                    <div
+                        class="message error-message"
+                        id="errorMessage"
+                    ></div>
+
+
+                    <!-- Success -->
+                    <div
+                        class="message success-message"
+                        id="successMessage"
+                    ></div>
+
+
+                    <!-- Login Button -->
+                    <button
+                        type="submit"
+                        class="login-button"
+                        id="loginButton"
+                    >
+                        <span>Login</span>
+                        <span class="button-arrow">→</span>
+                    </button>
+
+                </form>
+
+
+                <!-- Register -->
+                <div class="register-section">
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                    <a href="register.html">
+                        Create Account
+                    </a>
+
+                </div>
+
+
+                <div class="login-footer">
+                    <span>© 2026 FitAI</span>
+                    <span>•</span>
+                    <span>Your Fitness Companion</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+</html>

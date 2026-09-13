@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitAI - Diet</title>
+
+    <link rel="stylesheet" href="diet.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">⚡</div>
+
+            <div>
+                <h2>FitAI</h2>
+                <span>Smart Fitness</span>
+            </div>
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="index.html" class="menu-link">
+                🏠 <span>Dashboard</span>
+            </a>
+
+            <a href="workout.html" class="menu-link">
+                🏋️ <span>Workout</span>
+            </a>
+
+            <a href="diet.html" class="menu-link active">
+                🍎 <span>Diet</span>
+            </a>
+
+            <a href="water.html" class="menu-link">
+                💧 <span>Water</span>
+            </a>
+
+            <a href="motivation.html" class="menu-link">
+                💪 <span>Motivation</span>
+            </a>
+
+            <a href="progress.html" class="menu-link">
+                📊 <span>Progress</span>
+            </a>
+
+            <a href="profile.html" class="menu-link">
+                👤 <span>Profile</span>
+            </a>
+
+            <a href="chatbot.html" class="menu-link">
+                🤖 <span>AI Coach</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button class="theme-btn" id="themeToggle">
+
+                <span id="themeIcon">🌙</span>
+
+                <span id="themeText">
+                    Dark Mode
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MOBILE OVERLAY ================= -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn">
+                ☰
+            </button>
+
+
+            <div class="page-title">
+
+                <h1>🍎 Diet Tracker</h1>
+
+                <p>
+                    Track your daily meals and build better eating habits.
+                </p>
+
+            </div>
+
+
+            <div
+                class="user-area"
+                id="userArea">
+
+                <a
+                    href="login.html"
+                    class="auth-btn login-btn">
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="auth-btn register-btn">
+                    Register
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE ================= -->
+
+        <section class="diet-page">
+
+
+            <!-- ================= ADD MEAL ================= -->
+
+            <div class="card meal-form-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>Add Meal</h2>
+
+                        <p>
+                            Record what you ate today.
+                        </p>
+
+                    </div>
+
+                    <div class="meal-icon">
+                        🍽️
+                    </div>
+
+                </div>
+
+
+                <form id="dietForm">
+
+
+                    <!-- MEAL TYPE -->
+
+                    <div class="form-group">
+
+                        <label for="mealType">
+                            Meal Type
+                        </label>
+
+                        <select
+                            id="mealType"
+                            required>
+
+                            <option value="">
+                                Select Meal
+                            </option>
+
+                            <option value="Breakfast">
+                                🌅 Breakfast
+                            </option>
+
+                            <option value="Lunch">
+                                ☀️ Lunch
+                            </option>
+
+                            <option value="Snacks">
+                                🍎 Snacks
+                            </option>
+
+                            <option value="Dinner">
+                                🌙 Dinner
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FOOD -->
+
+                    <div class="form-group">
+
+                        <label for="food">
+                            Food
+                        </label>
+
+                        <select
+                            id="food"
+                            required>
+
+                            <option value="">
+                                Select Food
+                            </option>
+
+                            <option value="Oats">
+                                Oats
+                            </option>
+
+                            <option value="Eggs">
+                                Eggs
+                            </option>
+
+                            <option value="Chicken">
+                                Chicken
+                            </option>
+
+                            <option value="Rice">
+                                Rice
+                            </option>
+
+                            <option value="Roti">
+                                Roti
+                            </option>
+
+                            <option value="Paneer">
+                                Paneer
+                            </option>
+
+                            <option value="Dal">
+                                Dal
+                            </option>
+
+                            <option value="Vegetables">
+                                Vegetables
+                            </option>
+
+                            <option value="Fruits">
+                                Fruits
+                            </option>
+
+                            <option value="Milk">
+                                Milk
+                            </option>
+
+                            <option value="Curd">
+                                Curd
+                            </option>
+
+                            <option value="Nuts">
+                                Nuts
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- OTHER FOOD -->
+
+                    <div
+                        class="form-group"
+                        id="otherFoodGroup"
+                        style="display: none;">
+
+                        <label for="otherFood">
+                            Enter Food
+                        </label>
+
+                        <input
+                            type="text"
+                            id="otherFood"
+                            placeholder="Enter food name">
+
+                    </div>
+
+
+                    <!-- QUANTITY -->
+
+                    <div class="form-group">
+
+                        <label for="quantity">
+                            Quantity
+                        </label>
+
+                        <input
+                            type="text"
+                            id="quantity"
+                            placeholder="e.g. 2 eggs, 1 bowl, 100g"
+                            required>
+
+                    </div>
+
+
+                    <!-- NOTES -->
+
+                    <div class="form-group">
+
+                        <label for="notes">
+                            Notes
+                        </label>
+
+                        <textarea
+                            id="notes"
+                            rows="4"
+                            placeholder="Add any notes about this meal..."></textarea>
+
+                    </div>
+
+
+                    <!-- BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="save-meal-btn">
+
+                        <span>➕</span>
+
+                        Add Meal
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ================= MEAL HISTORY ================= -->
+
+            <div class="card meal-history-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>Today's Meals</h2>
+
+                        <p>
+                            Your meals recorded today.
+                        </p>
+
+                    </div>
+
+
+                    <div class="meal-count">
+
+                        <span id="mealCount">
+                            0
+                        </span>
+
+                        <small>
+                            Meals
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DAILY SUMMARY -->
+
+                <div class="daily-summary">
+
+                    <div class="summary-item">
+
+                        <span class="summary-icon">
+                            🌅
+                        </span>
+
+                        <div>
+                            <strong id="breakfastCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Breakfast
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span class="summary-icon">
+                            ☀️
+                        </span>
+
+                        <div>
+                            <strong id="lunchCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Lunch
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span class="summary-icon">
+                            🍎
+                        </span>
+
+                        <div>
+                            <strong id="snacksCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Snacks
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span class="summary-icon">
+                            🌙
+                        </span>
+
+                        <div>
+                            <strong id="dinnerCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Dinner
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEAL LIST -->
+
+                <div
+                    id="mealList"
+                    class="meal-list">
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            🍽️
+                        </div>
+
+                        <h3>
+                            No meals recorded today
+                        </h3>
+
+                        <p>
+                            Add your first meal to start tracking your diet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="diet.js"></script>
+
+</body>
+</html>
