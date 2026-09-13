@@ -1,9 +1,9 @@
-from flask import Flask, jsonify
-from flask_cors import CORS
 import os
 
-from config import Config
+from flask import Flask, jsonify, send_from_directory
+from flask_cors import CORS
 
+from config import Config
 from db.mongodb import db
 
 # -----------------------------------
@@ -21,19 +21,37 @@ from routes.motivation import motivation_bp
 
 
 # -----------------------------------
+# FRONTEND PATH
+# -----------------------------------
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FRONTEND_DIR = os.path.join(BASE_DIR, "Frontend")
+
+
+# -----------------------------------
 # CREATE FLASK APP
 # -----------------------------------
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_folder=FRONTEND_DIR,
+    static_url_path=""
+)
 
 app.config.from_object(Config)
+
+
+# -----------------------------------
+# CORS
+# -----------------------------------
 
 CORS(
     app,
     resources={
         r"/api/*": {
             "origins": [
-                "http://127.0.0.1:5500"
+                "http://127.0.0.1:5500",
+                "http://localhost:5500"
             ]
         }
     }
@@ -55,16 +73,15 @@ app.register_blueprint(motivation_bp)
 
 
 # -----------------------------------
-# HOME
+# FRONTEND HOME
 # -----------------------------------
 
 @app.route("/")
 def home():
-
-    return jsonify({
-        "success": True,
-        "message": "FitAI backend is running."
-    })
+    return send_from_directory(
+        FRONTEND_DIR,
+        "index.html"
+    )
 
 
 # -----------------------------------
@@ -117,6 +134,7 @@ def database_test():
 # -----------------------------------
 
 if __name__ == "__main__":
+
     app.run(
         host="0.0.0.0",
         port=int(os.environ.get("PORT", 5000)),
